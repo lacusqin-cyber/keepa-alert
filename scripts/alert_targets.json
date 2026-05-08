@@ -1,0 +1,21 @@
+{
+  "asins": [
+    {"asin": "B0DFHW2JTT", "domain": 12, "label": "BR-竞手1"},
+    {"asin": "B0FXMBWGGM", "domain": 12, "label": "BR-竞手2"},
+    {"asin": "B0DFJGKW2L", "domain": 12, "label": "BR-竞手3"},
+    {"asin": "B0DSP8J476", "domain": 12, "label": "BR-竞手4"},
+    {"asin": "B0FCR5Q8S6", "domain": 12, "label": "BR-竞手5"},
+    {"asin": "B0DQ82FJST", "domain": 12, "label": "BR-竞手6"},
+    {"asin": "B0C3V5X3QT", "domain": 12, "label": "BR-竞手7"},
+    {"asin": "B0FJMHMCBZ", "domain": 12, "label": "BR-竞手8"},
+    {"asin": "B0DVMQVVDY", "domain": 12, "label": "BR-竞手9"},
+    {"asin": "B0DHL93XCN", "domain": 12, "label": "BR-竞手10"},
+    {"asin": "B0DHL63KWK", "domain": 12, "label": "BR-竞手11"},
+    {"asin": "B0G1ZCVQGD", "domain": 12, "label": "BR-竞手12"},
+    {"asin": "B0DYTJKWSD", "domain": 12, "label": "BR-竞手13"},
+    {"asin": "B0CXHNGDC1", "domain": 12, "label": "BR-竞手14"},
+    {"asin": "B0BR3M8XHK", "domain": 12, "label": "BR-竞手15"},
+    {"asin": "B0BW3VHCD5", "domain": 12, "label": "BR-竞手16"}
+  ],
+  "_comment": "domain 映射: 1=US, 2=UK, 3=DE, 4=FR, 5=JP, 6=CA, 12=BR"
+}
