@@ -2,9 +2,12 @@ name: Keepa Alert
 
 on:
   schedule:
-    # 每天北京时间 10:00 和 18:00（UTC 02:00 和 10:00）
-    - cron: '0 2,10 * * *'
+    # 测试时间：北京时间 15:30 (UTC 07:30)
+    - cron: '30 7 * * *'
+    # 正式时间：北京时间 10:00 和 18:00 (UTC 02:00 和 10:00)
+    # - cron: '0 2,10 * * *'
   workflow_dispatch:  # 支持手动触发
+  # 强制刷新 schedule - 2026-05-09
 
 jobs:
   send-alert:
@@ -22,4 +25,3 @@ jobs:
         KEEPA_API_KEY: ${{ secrets.KEEPA_API_KEY }}
         FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
         FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
-        # 强制刷新 schedule - 2026-05-09
