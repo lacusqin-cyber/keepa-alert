@@ -33,4 +33,4 @@ jobs:
         KEEPA_API_KEY: ${{ secrets.KEEPA_API_KEY }}
         FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
         FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
-      run: python scripts/send_alert_from_cache.py --targets scripts/alert_targets.json --label "巴西竞手ASIN预警"targets scripts/alert_targets.json --label "巴西竞手ASIN预警"
+      run: python scripts/send_alert_from_cache.py --targets scripts/alert_targets.json --label "巴西竞手ASIN预警"
