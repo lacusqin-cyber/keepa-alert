@@ -2,26 +2,35 @@ name: Keepa Alert
 
 on:
   schedule:
-    # 测试时间：北京时间 15:30 (UTC 07:30)
-    - cron: '30 7 * * *'
-    # 正式时间：北京时间 10:00 和 18:00 (UTC 02:00 和 10:00)
-    # - cron: '0 2,10 * * *'
-  workflow_dispatch:  # 支持手动触发
-  # 强制刷新 schedule - 2026-05-09
+    # 正式: 北京时间 10:00 和 18:00 (UTC 02:00, 10:00)
+    - cron: '0 2,10 * * *'
+    
+    # 测试: 每 10 分钟触发一次（取消下面这行注释即可启用测试）
+    # - cron: '*/10 * * * *'
+    
+  workflow_dispatch:  # 手动触发
 
 jobs:
   send-alert:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
       with:
         python-version: '3.12'
+        
     - name: Install dependencies
       run: pip install requests keepa
+      
     - name: Run alert
-      run: python scripts/send_alert_from_cache.py --targets scripts/alert_targets.json --label "巴西竞手ASIN预警"
       env:
         KEEPA_API_KEY: ${{ secrets.KEEPA_API_KEY }}
         FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
         FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+      run: python scripts/send_alert_from_cache.py --targets scripts/alert_targets.json --label "巴西竞手ASIN预警"
