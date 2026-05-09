@@ -21,4 +21,4 @@ jobs:
       env:
         KEEPA_API_KEY: ${{ secrets.KEEPA_API_KEY }}
         FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
-        FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }} 
